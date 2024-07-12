@@ -75,8 +75,9 @@ SK Networks Family AI Camp 과정 2차 프로젝트
 # 5. Commit History (커밋 이력)
 
 # 6. 발생한 이슈 내역  
-![image](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN01-2nd-4Team/assets/138251577/af12bb50-7c5f-4197-9e85-fa07f4268a56)
-![image](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN01-2nd-4Team/assets/138251577/e8f4cb6b-d2e3-4347-bdbe-7dad1aaf508e)
+![image](https://github.com/user-attachments/assets/35d00105-c105-409a-86b6-e395f23ab96d)
+![image](https://github.com/user-attachments/assets/7167b592-9f88-48f1-9a3e-1108e92db1e6)
+![image](https://github.com/user-attachments/assets/e6cde16b-088e-436d-8e11-a6f7e0c0ba8b)
 
 # 7. ERD
 ![image](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN01-2nd-4Team/assets/138251577/71b10ee9-53aa-413f-bdc9-ea9814f6ec0b)
