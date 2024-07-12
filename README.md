@@ -61,18 +61,66 @@ SK Networks Family AI Camp 과정 2차 프로젝트 : Vue + Django + FastAPI 기
 
 - 가설1: 남자 회원이 여성 회원 보다 많을 것이다.
 - 가설2: 남성 회원이 여성 회원 보다 대체적으로 구매량이 더 많을 것이다
-- 가설3: 7나이가 젊을수록 러닝화 구매량이 가장 많을 것이다.
+- 가설3: 나이가 젊을수록 러닝화 구매량이 가장 많을 것이다.
 - 가설4: 회원가입 시점과 최근 접속 시점 사이가 짧을수록(= 자주 접속할수록) 회원 이탈률이 낮을 것이다.
 - 가설5: 기대수익이 높은 회원일수록 회원 이탈률이 낮을 것이다
+
+<br>아래와 같은 자료를 통해 가설1, 가설2 검증<br>
 ![image](https://github.com/user-attachments/assets/d6d060b4-e9ab-47ea-94f4-b8b4ea59beba)
 ![image](https://github.com/user-attachments/assets/bfe65672-84d8-4972-b204-e395633c7572)
+
+<br>아래와 같은 자료를 통해 가설3 검증<br>
+```
+from datetime import datetime
+
+# 현재 연도
+current_year = datetime.now().year
+
+# 나이 계산
+data['age'] = current_year - data['birth_year']
+
+# 나이대별 구매량 집계
+age_group_quantity = data.groupby('age')['quantity'].sum()
+
+# 시각화
+plt.figure(figsize=(12, 6))
+age_group_quantity.plot(kind='line', marker='o')
+plt.title('Total Quantity Purchased by Age')
+plt.xlabel('Age')
+plt.ylabel('Total Quantity Purchased')
+plt.grid(True)
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/6bc55fd4-d976-4e89-a076-cdd7271778c6)
+
+
 ![image](https://github.com/user-attachments/assets/921c7cfa-a000-4f0f-95a6-fadf919f66cc)
 ![image](https://github.com/user-attachments/assets/1b22480b-c560-48d9-94be-0ab2c6a26075)
 ![image](https://github.com/user-attachments/assets/0208e3c4-f78d-4138-b60f-e4565d0795a1)
 
+<br>
 
+![image](https://github.com/user-attachments/assets/ba40b1b5-7705-465b-8962-f97ee8e04588)
+<br>
+![image](https://github.com/user-attachments/assets/7e679596-616b-4da1-9a26-1e9d64769080)
+<br>
+해석:
+상관관계 히트맵은 각 변수 간의 상관관계를 보여줍니다.
+색상의 강도와 색조를 통해 변수 간의 상관계수의 크기와 방향을 알 수 있습니다.
+quantity와 total_price는 강한 양의 상관관계(상관계수 ≈ 0.8)를 보이며, 이는 구매량이 많을수록 총 구매 금액이 높아진다는 것을 의미합니다.
+age와 total_price는 약한 음의 상관관계(상관계수 ≈ -0.2)를 나타내어, 나이가 많을수록 총 구매 금액이 약간 낮아질 가능성을 시사합니다.
+gender와 다른 변수들 간의 상관관계는 대부분 낮거나 미미한 값을 보여, 성별과 다른 변수들 간의 직접적인 연관성은 적다고 해석할 수 있습니다.
 
- 
+![image](https://github.com/user-attachments/assets/2618ffbf-6036-428f-910d-fe1d4637367e)
+<br>
+
+해석:
+PCA(주성분 분석) 결과는 고차원의 데이터를 2차원 공간으로 투영하여, 데이터의 주요 변동성을 설명하는 두 개의 주성분을 보여줍니다.
+주성분 1(PC1)은 전체 변동성의 약 48.0%를 설명하고, 주성분 2(PC2)는 약 25.1%를 설명하여, 두 주성분이 전체 변동성의 73.1%를 설명합니다.
+시각화된 그래프에서 각 점은 한 회원을 나타내며, 성별에 따라 색상으로 구분되어 있습니다.
+대부분의 데이터가 PC1 방향으로 넓게 분포되어 있으며, 이는 PC1이 데이터의 주요 변동성을 포착하고 있음을 시사합니다.
+성별에 따라 군집화된 경향은 크게 보이지 않지만, PCA를 통해 주요 변동성을 설명할 수 있는 변수를 파악하는 데 유용합니다.
+<br> 
 
 # 5. Agile Board (애자일 보드)
 ## WBS를 Agile Board(애자일 보드) 로 변경
